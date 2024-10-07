@@ -4,6 +4,12 @@ const pageContent = {
   type: "document",
   fields: [
     {
+      name: "title",
+      title: "Section Title",
+      type: "string",
+      description: "Title for the navbar section",
+    },
+    {
       name: "navItems",
       title: "Navigation Items",
       type: "array",

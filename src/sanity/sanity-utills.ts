@@ -12,7 +12,9 @@ export async function getProjects(): Promise<Project[]> {
         "image": image.asset->url,
         url, 
         content
-        }`
+        }`,
+    {},
+    { cache: "no-cache" }
   );
 }
 
@@ -27,7 +29,8 @@ export async function getProject(slug: string): Promise<Project> {
         url, 
         content
         }`,
-    { slug }
+    { slug },
+    { cache: "no-cache" }
   );
 }
 
@@ -41,7 +44,9 @@ export async function getPageContent() {
                 btnText,
                 content
             }
-        }[0]`
+        }[0]`,
+    {},
+    { cache: "no-cache" }
   );
 }
 
@@ -55,7 +60,9 @@ export async function getServicesSection() {
         description,
         "imageUrl": image.asset->url
       }
-    }[0]`
+    }[0]`,
+    {},
+    { cache: "no-cache" }
   );
 }
 
@@ -71,7 +78,9 @@ export async function getClientSection() {
         testimonial,
         "imageUrl": image.asset->url
       }
-    }[0]`
+    }[0]`,
+    {},
+    { cache: "no-cache" }
   );
 }
 
@@ -85,6 +94,8 @@ export async function getBenefitSection() {
         title,
         description,
       }
-    }[0]`
+    }[0]`,
+    {},
+    { cache: "no-cache" }
   );
 }
