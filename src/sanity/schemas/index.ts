@@ -1,5 +1,7 @@
+import benefits from "./benefit-schema";
+import clients from "./clients-schema";
 import pageContent from "./page-content-schema";
-import project from "./project-schema";
+import services from "./service-schema";
 
-const schemas = [project, pageContent];
+const schemas = [pageContent, services, clients, benefits];
 export default schemas;

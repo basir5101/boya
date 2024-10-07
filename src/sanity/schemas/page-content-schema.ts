@@ -28,6 +28,11 @@ const pageContent = {
           type: "string",
         },
         {
+          name: "title_extra",
+          title: "Extra Title",
+          type: "string",
+        },
+        {
           name: "subtitle",
           title: "Hero Subtitle",
           type: "string",

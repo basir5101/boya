@@ -44,3 +44,47 @@ export async function getPageContent() {
         }[0]`
   );
 }
+
+export async function getServicesSection() {
+  return client.fetch(
+    groq`*[_type == "servicesSection"]{
+      title,
+      summary,
+      services[] {
+        title,
+        description,
+        "imageUrl": image.asset->url
+      }
+    }[0]`
+  );
+}
+
+export async function getClientSection() {
+  return client.fetch(
+    groq`*[_type == "clientSection"]{
+      title,
+      subTitle,
+      clients[] {
+        name,
+        role,
+        restaurant,
+        testimonial,
+        "imageUrl": image.asset->url
+      }
+    }[0]`
+  );
+}
+
+export async function getBenefitSection() {
+  return client.fetch(
+    groq`*[_type == "benefitSection"]{
+      title,
+      subTitle,
+      btnText,
+      benefits[] {
+        title,
+        description,
+      }
+    }[0]`
+  );
+}

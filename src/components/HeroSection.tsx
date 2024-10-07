@@ -6,7 +6,6 @@ import { Hero } from "@/types/hero";
 import Image from "next/image";
 
 export default function HeroSection({ pageData }: { pageData: Hero }) {
-  console.log("hero section data", pageData);
   return (
     <div className="flex  justify-between items-center">
       <div className="w-1/2">
