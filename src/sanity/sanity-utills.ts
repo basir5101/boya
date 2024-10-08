@@ -99,3 +99,39 @@ export async function getBenefitSection() {
     { cache: "no-cache" }
   );
 }
+
+export async function getMarketingSection() {
+  return client.fetch(
+    groq`*[_type == "marketingSection"]{
+      title,
+      subTitle,
+      btnText,
+      items[] {
+        name,
+        icons[]{
+        "imageUrl": icon.asset->url
+        },
+      }
+    }[0]`,
+    {},
+    { cache: "no-cache" }
+  );
+}
+
+export async function getFooterSection() {
+  return client.fetch(
+    groq`*[_type == "footerSection"]{
+      title,
+      content,
+      subtitle,
+      btnText,
+      address,
+      links[] {
+        label,
+        route,
+      }
+    }[0]`,
+    {},
+    { cache: "no-cache" }
+  );
+}

@@ -1,6 +1,8 @@
 import {
   getBenefitSection,
   getClientSection,
+  getFooterSection,
+  getMarketingSection,
   getPageContent,
   getServicesSection,
 } from "@/sanity/sanity-utills";
@@ -12,13 +14,16 @@ import HeroSection from "@/components/HeroSection";
 import ServiceSection from "@/components/ServiceSection";
 import ClientSection from "@/components/ClientSection";
 import BenefitSection from "@/components/BenefitSection";
+import MarketingSection from "@/components/MarketingSection";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
   const pageContent = await getPageContent();
   const services = await getServicesSection();
   const clients = await getClientSection();
   const benefits = await getBenefitSection();
-
+  const marketingContent = await getMarketingSection();
+  const footerContent = await getFooterSection();
   return (
     <div className="">
       <div className="bg-black text-white">
@@ -49,6 +54,12 @@ export default async function Home() {
       <div className="max-w-5xl mx-auto">
         <ClientSection clients={clients} />
         <BenefitSection benefits={benefits} />
+        <MarketingSection marketingContent={marketingContent} />
+      </div>
+      <div className="bg-black text-white">
+        <div className="max-w-5xl mx-auto pb-6">
+          <Footer footerContent={footerContent} />
+        </div>
       </div>
     </div>
   );
