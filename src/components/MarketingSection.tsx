@@ -17,7 +17,7 @@ export default function MarketingSection({
         {" "}
         {marketingContent.subTitle}{" "}
       </h3>
-      <div className="grid lg:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 ">
         {marketingContent.items.map((item, index) => (
           <div key={index} className="flex items-center">
             <div className="flex w-32 p-2 justify-center items-center">

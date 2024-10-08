@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HeroSection({ pageData }: { pageData: Hero }) {
   return (
-    <div className="flex  justify-between items-center">
+    <div className="flex  justify-between items-center mt-16">
       <div className="w-1/2">
         <h1 className="text-7xl font-bold">
           {pageData.title}
