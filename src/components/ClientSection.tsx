@@ -6,6 +6,7 @@ import React from "react";
 // import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
+import { Autoplay } from "swiper/modules";
 
 export default function ClientSection({ clients }: { clients: Clients }) {
   return (
@@ -23,11 +24,12 @@ export default function ClientSection({ clients }: { clients: Clients }) {
         className="mySwiper"
         loop={true}
         autoplay={true}
+        modules={[Autoplay]}
       >
         {clients.clients.map((client, index) => (
           <SwiperSlide key={index}>
             <div className="flex bg-black text-white rounded-lg">
-              <div className="h-[400px] w-[2000px] overflow-hidden relative">
+              <div className="h-[500px] w-[2000px] overflow-hidden relative">
                 <Image
                   src={client.imageUrl}
                   height={800}
